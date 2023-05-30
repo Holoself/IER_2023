@@ -1,4 +1,4 @@
-# Exploring the Relationship between Eye Blink Rate and Different Virtual Environments
+# Code to Explore the Relationship between Eye Blink Rate and Different Virtual Environments
 
 This project aims to calculate the eye blink rate from original data,
 and evaluate the differences between different groups. Furthermore,
