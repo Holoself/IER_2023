@@ -1,5 +1,7 @@
 # Code to Explore the Relationship between Eye Blink Rate and Different Virtual Environments
 
+[![DOI](https://zenodo.org/badge/647163800.svg)](https://zenodo.org/badge/latestdoi/647163800)
+
 This project aims to calculate the eye blink rate from original data,
 and evaluate the differences between different groups. Furthermore,
 visualize the eye blink data, and the correlation analyse results.
