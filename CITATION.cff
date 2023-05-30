@@ -3,6 +3,7 @@ message: "If you use this software, please cite it as below."
 authors:
   - family-names: Qi
     given-names: Chenchen
+    orcid: https://orcid.org/0009-0002-0077-5511
 title: "Code to Explore the Relationship between Eye Blink Rate and Different Virtual Environments"
 version: 1.0.1
 date-released: 2023-5-30
