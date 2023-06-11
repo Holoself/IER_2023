@@ -2,7 +2,7 @@ import csv
 import matplotlib.pyplot as plt
 import pandas as pd
 
-import tools
+import statistic_tools
 import numpy as np
 import scipy
 import seaborn as sns
@@ -44,24 +44,24 @@ for subject_num in range(1, 25):
         combined.append(line[:-1])
 
     # Find the blink and calculate the blink related data
-    log_control, time_control, num_control, f_control = tools.blinkfinder(control)
-    log_npc, time_npc, num_npc, f_npc = tools.blinkfinder(npc)
-    log_noise, time_noise, num_noise, f_noise = tools.blinkfinder(noise)
-    log_secondTask, time_secondTask, num_secondTask, f_secondTask = tools.blinkfinder(secondTask)
-    log_combined, time_combined, num_combined, f_combined = tools.blinkfinder(combined)
+    log_control, time_control, num_control, f_control = statistic_tools.blinkfinder(control)
+    log_npc, time_npc, num_npc, f_npc = statistic_tools.blinkfinder(npc)
+    log_noise, time_noise, num_noise, f_noise = statistic_tools.blinkfinder(noise)
+    log_secondTask, time_secondTask, num_secondTask, f_secondTask = statistic_tools.blinkfinder(secondTask)
+    log_combined, time_combined, num_combined, f_combined = statistic_tools.blinkfinder(combined)
     interval_all = [time_control, time_npc, time_noise, time_secondTask, time_combined]
     f_all = [f_control, f_npc, f_noise, f_secondTask, f_combined]
     interval.append(interval_all)
     frequency.append(f_all)
 
 # Normalization of the eye blink frequency
-frequency_ = tools.normalization(frequency)
+frequency_ = statistic_tools.normalization(frequency)
 frequency = np.array(frequency_)
 
 # ANOVA and post-test (Tukey's method here)
 x_labels = ['Control', 'NPC', 'Noise', 'Second Task', 'Combined']
-dataF_box, dataF_in = tools.anova_(frequency, x_labels)
-out_list, out_values = tools.tukey_(dataF_in)
+dataF_box, dataF_in = statistic_tools.anova_(frequency, x_labels)
+out_list, out_values = statistic_tools.tukey_(dataF_in)
 
 # Plot the violin-plot
 plt.figure(1)
